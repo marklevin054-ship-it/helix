@@ -1,0 +1,76 @@
+/* 3D DNA Helix hero styles */
+:root{
+  --bg:#0E1A2A;          /* blue-gray */
+  --accent:#E91E63;      /* crimson pink */
+  --accent-deep:#A31234; /* deep red */
+  --fg:#F5F7FB;          /* cool white */
+  --success:#27AE60;
+}
+
+*{ box-sizing:border-box; }
+
+#hero{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  background: radial-gradient(1200px 800px at 70% 30%, #14263f, var(--bg));
+}
+
+#scene{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.overlay{
+  position:absolute;
+  inset:auto 0 8vh 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  text-align:center;
+  color:var(--fg);
+  pointer-events:auto;
+  padding:0 24px;
+}
+
+.overlay h1{
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, 'Helvetica Neue', Arial, Noto Sans, 'Apple Color Emoji','Segoe UI Emoji';
+  font-weight:800;
+  letter-spacing:-0.02em;
+  font-size: clamp(28px, 5vw, 48px);
+  margin:0;
+  text-shadow: 0 6px 24px rgba(0,0,0,0.35);
+}
+
+.overlay p{
+  margin:0;
+  opacity:0.9;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.overlay .cta{
+  margin-top:14px;
+  text-decoration:none;
+  background:linear-gradient(120deg, var(--accent), #ff6b9c);
+  color:white;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:700;
+  box-shadow:0 8px 30px rgba(233,30,99,0.35);
+  transform: translateZ(0);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.overlay .cta:hover{
+  transform: translateY(-2px);
+  box-shadow:0 12px 40px rgba(233,30,99,0.45);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .overlay .cta{ transition:none; }
+}
